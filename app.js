@@ -15,9 +15,9 @@ connectDB();
 const PORT = process.env.PORT || 3500;
 
 app.use(cors({
-    'allowedHeaders': ['Content-Type'],
-    'origin': 'https://entnt-frontend-divy.vercel.app/',
-    'preflightContinue': true
+    origin: ["https://entnt-frontend-divy.vercel.app", "http://localhost:3000"], // Add your local development URL if needed
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json());
