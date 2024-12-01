@@ -14,7 +14,12 @@ const calendarRouter = require("./routes/calendar");
 connectDB();
 const PORT = process.env.PORT || 3500;
 
-app.use(cors());
+app.use(cors({
+    'allowedHeaders': ['Content-Type'],
+    'origin': 'https://entnt-frontend-divy.vercel.app/',
+    'preflightContinue': true
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", authRouter);
